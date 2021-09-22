@@ -1,6 +1,7 @@
 package environment;
 
 import lifeform.LifeForm;
+import lifeform.MockLifeForm;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -17,7 +18,7 @@ public class TestEnvironment {
   @Test
   public void testAddLifeForm() {
     Environment e = new Environment(2, 3);
-    LifeForm johnny = new LifeForm("Johnny", 100);
+    MockLifeForm johnny = new MockLifeForm("Johnny", 100);
     e.addLifeForm(johnny, 0, 1);
     assertEquals(e.getLifeForm(0,1), johnny);
   }
@@ -25,7 +26,7 @@ public class TestEnvironment {
   @Test
   public void testRemoveLifeForm() {
     Environment e = new Environment(2, 3);
-    LifeForm johnny = new LifeForm("Johnny", 100);
+    LifeForm johnny = new MockLifeForm("Johnny", 100);
     e.addLifeForm(johnny, 0, 1);
 
     e.removeLifeForm(0, 1);
@@ -35,7 +36,7 @@ public class TestEnvironment {
   @Test
   public void testOutOfBounds1() {
     Environment e = new Environment(1, 1);
-    LifeForm johnny = new LifeForm("Johnny", 100);
+    LifeForm johnny = new MockLifeForm("Johnny", 100);
     try {
       e.addLifeForm(johnny, 0, 1);
       assert false;
@@ -47,7 +48,7 @@ public class TestEnvironment {
   @Test
   public void testOutOfBounds2() {
     Environment e = new Environment(1, 1);
-    LifeForm johnny = new LifeForm("Johnny", 100);
+    MockLifeForm johnny = new MockLifeForm("Johnny", 100);
     try {
       e.addLifeForm(johnny, 1, 0);
       assert false;

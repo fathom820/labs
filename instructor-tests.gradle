@@ -7,7 +7,7 @@ task zipzip(type: Zip) {
 }
 
 task testZip(type: Zip) {
-  archiveName = 'lab1-instructor-tests.zip'
+  archiveName = 'lab2-instructor-tests.zip'
   from sourceSets.test.output
   excludes = ["**/.gradle"]
   destinationDir = file("${buildDir}/dist")
@@ -15,7 +15,7 @@ task testZip(type: Zip) {
 
 task downloadFile(type: Download) {
   quiet true
-  src 'https://www.dropbox.com/s/bnd8fy1acf8ie77/lab1-instructor-tests.zip?dl=1'
+  src 'https://www.dropbox.com/s/ytzd388gab3q5a9/lab2-instructor-tests.zip?dl=1'
   dest new File(buildDir, 'dist/instructor-tests.zip')
 }
 

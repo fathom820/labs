@@ -1,6 +1,7 @@
 package environment;
 
 import lifeform.LifeForm;
+import lifeform.MockLifeForm;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -29,7 +30,7 @@ public class TestCell {
    */
   @Test
   public void testAddLifeForm() {
-    LifeForm bob = new LifeForm("Bob", 40);
+    LifeForm bob = new MockLifeForm("Bob", 40);
     Cell cell = new Cell();
     // The cell is empty so this should work.
     boolean success = cell.addLifeForm(bob);
@@ -40,8 +41,8 @@ public class TestCell {
 
   @Test
   public void testFailAddLifeForm() {
-    LifeForm fred = new LifeForm("Fred", 40);
-    LifeForm bob = new LifeForm("Bob", 40);
+    LifeForm fred = new MockLifeForm("Fred", 40);
+    LifeForm bob = new MockLifeForm("Bob", 40);
     Cell cell = new Cell();
     boolean success = cell.addLifeForm(bob);
 
@@ -54,7 +55,7 @@ public class TestCell {
   @Test
   public void testRemoveLifeForm() {
     Cell c = new Cell();
-    c.addLifeForm(new LifeForm("Harold", 1));
+    c.addLifeForm(new MockLifeForm("Harold", 1));
     c.removeLifeForm();
     assertNull(c.getLifeForm());
   }
