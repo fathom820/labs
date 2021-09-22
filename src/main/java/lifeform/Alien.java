@@ -9,11 +9,13 @@ public class Alien extends LifeForm {
 
   public Alien(String myName, int currentLifePoints) {
     super(myName, currentLifePoints);
+    super.setAttackStrength(10);
   }
 
   public Alien(String myName, int currentLifePoints, RecoveryBehavior rb) {
     this(myName, currentLifePoints);
     this.rb = rb;
+
   }
 
   protected void recover() {

@@ -13,7 +13,7 @@ public class Cell {
   /**
   sets the value of this.entity to a specified lifeform.
   only works if entity == null, otherwise returns false
-   * @param entity
+   * @param entity entity
    */
   public boolean addLifeForm(LifeForm entity) {
     if (this.entity == null) {

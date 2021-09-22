@@ -22,26 +22,52 @@ public abstract class LifeForm {
     this.attackStrength = 0;
   }
 
+  /**
+   * Construct new lifeform with predifined name, life, attack strength
+   * @param myName name
+   * @param currentLifePoints life
+   * @param attackStrength attack strength
+   */
   public LifeForm(String myName, int currentLifePoints, int attackStrength) {
     this(myName, currentLifePoints);
     this.attackStrength = attackStrength;
   }
 
+
   // func
+
+  /**
+   * Makes an enemy lifeform take damage equivalent to this lifeform's attack strength.
+   * If this lifeform is dead, it will deal no damage
+   * @param entity
+   */
+    public void attack(LifeForm entity) {
+      if (this.currentLifePoints > 0) {
+        entity.takeHit(this.attackStrength);
+      }
+
+    }
+
+  // get
+  /**
+   * Get name
+   * @return myName
+   */
   public String getName() {
     return myName;
   }
 
   /**
-   * get current life points
-   * @return life points
+   * Get current life points
+   * @return currentLifePoints
    */
   public int getCurrentLifePoints() {
     return currentLifePoints;
   }
 
   /**
-   * lose life points
+   * Lose life points
+   * Life points will not go below 0
    * @param damage amount to lose
    */
   public void takeHit(int damage) {
@@ -51,12 +77,16 @@ public abstract class LifeForm {
     }
   }
 
+
   public int getMaxLifePoints() {
     return maxLifePoints;
   }
 
-  // set
+  public int getAttackStrength() {
+    return attackStrength;
+  }
 
+  // set
   public void setAttackStrength(int attackStrength) {
     this.attackStrength = attackStrength;
   }

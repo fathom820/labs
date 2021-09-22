@@ -14,6 +14,7 @@ public class Human extends LifeForm {
     if (armorPoints < 0) {
       armorPoints = 0;
     }
+
     this.armorPoints = armorPoints;
     super.setAttackStrength(5);
   }
